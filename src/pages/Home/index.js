@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Home(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [usuario, setUsuario] = useState('');
   
   function handlePesquisa() {
@@ -12,12 +12,13 @@ function Home(props) {
       const repositories = response.data;
       const repositoriesName = [];
       
+      // eslint-disable-next-line array-callback-return
       repositories.map((repository) => {
-        repositoriesName.push(repository.name);
+        repositoriesName.push(repository.name)
       });
       
       localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
-      history.push('/repositories');
+      navigate('/repositories');
     }); 
   }
 
