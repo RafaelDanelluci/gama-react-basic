@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import * as S from "./styled";
 
 function Home(props) {
   const [usuario, setUsuario] = useState('');
@@ -9,11 +10,10 @@ function Home(props) {
   }
 
   return (
-    <>
-      <h1>Digite seu usuario do GitHub</h1>
-      <input className = "usuarioInput" placeholder = "Usuario" value={usuario} onChange={e => setUsuario(e.target.value)}/>
-      <button type="button" onClick={handlePesquisa}>Pesquisar</button>
-    </>
+    <S.Container>
+      <S.Input className = "usuarioInput" placeholder = "Usuario" value={usuario} onChange={e => setUsuario(e.target.value)}/>
+      <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button>
+    </S.Container>
   );
 }
 

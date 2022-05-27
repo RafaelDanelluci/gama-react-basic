@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Repositories from '../pages/Repositories';
-import Home from '../pages/Home';
+import Repositories from '../pages/Repositories/index.js';
+import Home from '../pages/Home/index.js';
 
 export default function Routers() {
   return(
